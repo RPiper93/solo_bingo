@@ -1,0 +1,1 @@
+var bingoApp = angular.module('bingoApp', []);
