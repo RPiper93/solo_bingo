@@ -12,7 +12,30 @@ bingoApp.factory('BingoCardFactory', function(){
   };
 
   Card.prototype.generate = function() {
-    this.entries.push(getRandomInt(1,10));
+    for(var i = 0; i < 9; i++) {
+      var startRange = (i * 10) + 1;
+      var endRange = startRange + 10;
+      for(var j = 0; j < this.layout[i]; j++) {
+        number = this._getNumber(startRange, endRange);
+        this.entries.push(number);
+        this.freeSpaces -= 1;
+      };
+    };
+    return this.entries.sort(function(a, b){return a-b});
+  };
+
+  Card.prototype._getNumber = function(startRange, endRange) {
+    number = getRandomInt(startRange, endRange);
+    return this._checkNumber(number, startRange, endRange);
+  };
+
+  Card.prototype._checkNumber = function(number, startRange, endRange) {
+    if (this.entries.includes(number) === false){
+      return number
+    }
+    else {
+      return this._getNumber(startRange, endRange);
+    }
   };
 
   return Card;

@@ -13,10 +13,6 @@ describe('BingoCardFactory', function() {
     bingoCard = new BingoCardFactory();
   }));
 
-  it('initialises with 15 free spaces for numbers', function() {
-    expect(bingoCard.freeSpaces).toEqual(15);
-  });
-
   it('initialises with an empty card', function() {
     expect(bingoCard.entries).toEqual([]);
   });
@@ -27,6 +23,12 @@ describe('BingoCardFactory', function() {
 
   it('the first number on the card is less than 10', function() {
     bingoCard.generate();
-    expect(bingoCard.entries[0]).toBeLessThan(10);
+    console.log(bingoCard.entries);
+    expect(bingoCard.entries[0]).toBeLessThan(11);
+  });
+
+  it('generates a card with 15 unique numbers on it', function() {
+    bingoCard.generate();
+    expect(bingoCard.entries.length).toEqual(15);
   });
 });

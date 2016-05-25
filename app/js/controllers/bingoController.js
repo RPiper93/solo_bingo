@@ -2,9 +2,9 @@
 
 bingoApp.controller('BingoController', ['BingoCardFactory', function(BingoCardFactory) {
   var self = this;
+  var factory = new BingoCardFactory;
   self.check = 'This Controller is Working'
   self.check_factory = function() {
-    var factory = new BingoCardFactory;
     return factory.layout;
   };
 }]);
