@@ -3,13 +3,20 @@
   <head>
     <meta charset="utf-8">
     <title>Bingo!</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
     <script type="text/javascript" src="app.js"></script>
-    <script type="text/javascript" src="controllers/bingoController.js"></script>
+
   </head>
   <body>
-    <div ng-controller="BingoController as controller">
-      {{ controller.check }}
-    </div>
+    <main>
+      <div ng-controller="BingoController as controller">
+        {{ controller.check }}
+        {{ controller.check_factory() }}
+      </div>
+    </main>
+
+    <!--in production, use-->
+    <script type="text/javascript" src="controllers/bingoController.js"></script>
+    <script type="text/javascript" src="factories/bingoCardFactory.js"></script>
   </body>
 </html>

@@ -15,5 +15,15 @@
   "bugs": {
     "url": "https://github.com/RPiper93/solo_bingo/issues"
   },
-  "homepage": "https://github.com/RPiper93/solo_bingo#readme"
+  "homepage": "https://github.com/RPiper93/solo_bingo#readme",
+  "devDependencies": {
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-jasmine": "^1.0.2",
+    "protractor": "^3.3.0"
+  },
+  "dependencies": {
+    "http-server": "^0.9.0"
+  }
 }
