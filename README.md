@@ -1,8 +1,8 @@
 # Solo Bingo
-------------
 
-Rebecca Piper
-------------
+##### By Rebecca Piper
+
+
 
 An app that allows people to play a game of Bingo.
 

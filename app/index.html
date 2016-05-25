@@ -5,12 +5,11 @@
     <title>Bingo!</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="controllers/bingoController.js"></script>
   </head>
   <body>
-    <div>
-      <label>Name:</label>
-      <input type="text" ng-model="yourName" placeholder-"Enter a name here">
-      <h1>Hello {{yourName}}! Let's play Bingo!</h1>
+    <div ng-controller="BingoController as controller">
+      {{ controller.check }}
     </div>
   </body>
 </html>

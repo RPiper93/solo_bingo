@@ -1,0 +1,19 @@
+{
+  "name": "solo_bingo",
+  "version": "1.0.0",
+  "description": "A web app that allows someone to play a quick, solo game of bingo",
+  "main": "app/app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RPiper93/solo_bingo.git"
+  },
+  "author": "Rebecca Piper",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RPiper93/solo_bingo/issues"
+  },
+  "homepage": "https://github.com/RPiper93/solo_bingo#readme"
+}
