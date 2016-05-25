@@ -5,6 +5,6 @@ bingoApp.controller('BingoController', ['BingoCardFactory', function(BingoCardFa
   self.check = 'This Controller is Working'
   self.check_factory = function() {
     var factory = new BingoCardFactory;
-    return factory.text;
+    return factory.layout;
   };
 }]);
