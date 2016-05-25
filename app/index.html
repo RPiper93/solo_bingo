@@ -4,19 +4,19 @@
     <meta charset="utf-8">
     <title>Bingo!</title>
     <script src="bower_components/angular/angular.js"></script>
-    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
 
   </head>
   <body>
     <main>
       <div ng-controller="BingoController as controller">
-        {{ controller.check }}
+        <p id="check">{{ controller.check }}</p>
         {{ controller.check_factory() }}
       </div>
     </main>
 
     <!--in production, use-->
-    <script type="text/javascript" src="controllers/bingoController.js"></script>
-    <script type="text/javascript" src="factories/bingoCardFactory.js"></script>
+    <script type="text/javascript" src="js/controllers/bingoController.js"></script>
+    <script type="text/javascript" src="js/factories/bingoCardFactory.js"></script>
   </body>
 </html>
