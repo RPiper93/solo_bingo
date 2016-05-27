@@ -13,8 +13,8 @@ describe('BingoCardFactory', function() {
     bingoCard = new BingoCardFactory();
   }));
 
-  it('initialises with an empty card', function() {
-    expect(bingoCard.entries).toEqual([]);
+  it('initialises with an empty card with 3 rows', function() {
+    expect(bingoCard.entries).toEqual({0: [], 1: [], 2:[]});
   });
 
   it('initialises with one of four potential Bingo Card Permutations', function() {
@@ -23,12 +23,18 @@ describe('BingoCardFactory', function() {
 
   it('the first number on the card is less than 10', function() {
     bingoCard.generate();
-    console.log(bingoCard.entries);
-    expect(bingoCard.entries[0]).toBeLessThan(11);
+    expect(bingoCard.entries[0][0]).toBeLessThan(11);
   });
 
-  it('generates a card with 15 unique numbers on it', function() {
+  it('generates a card with 9 entries per row', function() {
     bingoCard.generate();
-    expect(bingoCard.entries.length).toEqual(15);
+    var row = bingoCard.entries[0];
+    expect(row.length).toEqual(9);
+  });
+
+  it('generates a card with 4 free spaces per row', function() {
+    bingoCard.generate();
+    var card = bingoCard.entries;
+    expect(countSpaces(card, 0)).toEqual(4);
   });
 });
