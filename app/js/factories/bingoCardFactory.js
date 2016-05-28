@@ -16,13 +16,30 @@ bingoApp.factory('BingoCardFactory', function(){
   Card.prototype.generate = function() {
     var position
     this._sortNumbers();
-    // want a Hash with 3 arrays of 9 values. 5 values in each hash have to be numbers, 4 have to be empty strings.
     for (var i in this.layout) {
-      position = getRandomInt(0,3);
+      position = this._getPosition(this.entries);
       this._addToColumn(i, position);
     };
     console.log("\n" + this.entries[0] + "\n" + this.entries[1] + "\n" + this.entries[2])
     return this.entries
+  };
+
+  Card.prototype._getPosition = function(object){
+    var position = getRandomInt(0,3);
+    if (this._numSpacesFree(object)[position] === 4){
+      return this._getPosition(object);
+    }
+    else {
+      return position;
+    };
+  };
+
+  Card.prototype._numSpacesFree = function(object){
+    var freeSpaces = [];
+    for (var i = 0; i < 3; i++) {
+      freeSpaces.push(count(object[i], " "));
+    };
+    return freeSpaces;
   };
 
   Card.prototype._addToColumn = function(index, position) {

@@ -11,3 +11,13 @@ function shuffleArray(array) {
   }
   return array;
 };
+
+function count(array, value) {
+  var count = 0;
+  for (var i in array) {
+    if (array[i] === value){
+      count += 1;
+    };
+  };
+  return count;
+};
