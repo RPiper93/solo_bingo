@@ -1,6 +1,6 @@
 "use strict";
 
-bingoApp.factory('BingoCardFactory', function(){
+bingoApp.factory('BingoCardFactory', ['BingoPositionsFactory', function(BingoPositionsFactory){
   var Card = function(){
     const POSSIBLE_CARD_PERMUTATIONS = [
     [3,3,3,1,1,1,1,1,1],
@@ -8,6 +8,7 @@ bingoApp.factory('BingoCardFactory', function(){
     [3,2,2,2,2,1,1,1,1],
     [2,2,2,2,2,2,1,1,1]
     ];
+    this.positions = new BingoPositionsFactory;
     this.entries = {0: [], 1: [], 2: []};
     this.layout = shuffleArray(POSSIBLE_CARD_PERMUTATIONS[getRandomInt(0,4)]);
     this.numbers = [];
@@ -17,38 +18,19 @@ bingoApp.factory('BingoCardFactory', function(){
     var position
     this._sortNumbers();
     for (var i in this.layout) {
-      position = this._getPosition(this.entries);
+      position = this.positions.check(this.entries, this.layout[i]);
       this._addToColumn(i, position);
     };
-    console.log("\n" + this.entries[0] + "\n" + this.entries[1] + "\n" + this.entries[2])
     return this.entries
-  };
-
-  Card.prototype._getPosition = function(object){
-    var position = getRandomInt(0,3);
-    if (this._numSpacesFree(object)[position] === 4){
-      return this._getPosition(object);
-    }
-    else {
-      return position;
-    };
-  };
-
-  Card.prototype._numSpacesFree = function(object){
-    var freeSpaces = [];
-    for (var i = 0; i < 3; i++) {
-      freeSpaces.push(count(object[i], " "));
-    };
-    return freeSpaces;
   };
 
   Card.prototype._addToColumn = function(index, position) {
     for (var j=0; j<3; j++) {
       if (this._oneNumber(j, index, position) || this._oneSpace(j, index, position)) {
-        this._addToCard(j, " ");
+        this._addToRow(j, " ");
       }
       else {
-        this._addToCard(j, this.numbers.shift());
+        this._addToRow(j, this.numbers.shift());
       };
     };
   };
@@ -65,7 +47,7 @@ bingoApp.factory('BingoCardFactory', function(){
     };
   };
 
-  Card.prototype._addToCard = function(row, value) {
+  Card.prototype._addToRow = function(row, value) {
     this.entries[row].push(value);
   };
 
@@ -106,4 +88,4 @@ bingoApp.factory('BingoCardFactory', function(){
   }
 
   return Card;
-});
+}]);
