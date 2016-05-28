@@ -11,7 +11,7 @@
     <main>
       <div ng-controller="BingoController as controller">
         <p id="check">{{ controller.check }}</p>
-        {{ controller.check_factory() }}
+        {{ controller.lines }}
       </div>
     </main>
 
@@ -19,5 +19,6 @@
     <script type="text/javascript" src="js/helper.js"></script>
     <script type="text/javascript" src="js/controllers/bingoController.js"></script>
     <script type="text/javascript" src="js/factories/bingoCardFactory.js"></script>
+    <script type="text/javascript" src="js/factories/bingoPositionsFactory.js"></script>
   </body>
 </html>

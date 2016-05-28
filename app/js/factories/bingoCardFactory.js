@@ -21,7 +21,8 @@ bingoApp.factory('BingoCardFactory', ['BingoPositionsFactory', function(BingoPos
       position = this.positions.check(this.entries, this.layout[i]);
       this._addToColumn(i, position);
     };
-    return this.entries
+    var result = this.entries;
+    return result;
   };
 
   Card.prototype._addToColumn = function(index, position) {

@@ -48,4 +48,6 @@ As a bingo player
 So I can vary the type of game
 I want to be able to pick the way to win (eg. Four Corners, Full House etc.)
 ```
+### Future Plans
 
+Given more time, I'd want to look over how I've generated the Bingo Cards to see if there is a simpler, more reliable way. If not, I want to finish my code so that it always produces rows with five numbers and four spaces.
