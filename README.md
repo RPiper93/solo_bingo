@@ -8,7 +8,7 @@ An app that allows people to play a solo game of Bingo (just for fun, no winning
 
 ###Basic Design
 
-[Current Appearance](/img/webpage.png)
+![Current Appearance](/img/webpage.png)
 
 ### To Do
 
