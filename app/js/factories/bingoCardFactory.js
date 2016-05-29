@@ -9,7 +9,7 @@ bingoApp.factory('BingoCardFactory', ['BingoPositionsFactory', function(BingoPos
     [2,2,2,2,2,2,1,1,1]
     ];
     this.positions = new BingoPositionsFactory;
-    this.entries = {0: [], 1: [], 2: []};
+    this.entries = [[], [], []];
     this.layout = shuffleArray(POSSIBLE_CARD_PERMUTATIONS[getRandomInt(0,4)]);
     this.numbers = [];
   };

@@ -14,7 +14,7 @@ describe('BingoCardFactory', function() {
   }));
 
   it('initialises with an empty card with 3 rows', function() {
-    expect(bingoCard.entries).toEqual({0: [], 1: [], 2:[]});
+    expect(bingoCard.entries).toEqual([ [], [], [] ]);
   });
 
   it('initialises with one of four potential Bingo Card Permutations', function() {

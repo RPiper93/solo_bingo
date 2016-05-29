@@ -21,3 +21,11 @@ function count(array, value) {
   };
   return count;
 };
+
+function arrayFrom(first, last) {
+  var array = [];
+  for (var i = first; i <= last; i++){
+    array.push(i);
+  }
+  return array;
+}

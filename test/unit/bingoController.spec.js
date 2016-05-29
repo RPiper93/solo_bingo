@@ -4,10 +4,10 @@ describe('BingoController', function() {
   var ctrl;
 
   beforeEach(inject(function($controller){
-    ctrl = $controller('BingoController');
+    ctrl = $controller('BingoCardController');
   }));
 
-  it('initialises with a check', function() {
-    expect(ctrl.check).toEqual("This Controller is Working")
-  })
+  it('initialises with an empty string instead of a called number', function() {
+    expect(ctrl.currentNumber).toEqual("");
+  });
 });

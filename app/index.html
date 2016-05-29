@@ -9,15 +9,22 @@
   </head>
   <body>
     <main>
-      <div ng-controller="BingoController as controller">
-        <p id="check">{{ controller.check }}</p>
-        {{ controller.lines }}
-      </div>
+      <h1>Bingo!</h1>
+      <div ng-controller="BingoCardController as controller">
+        <button ng-click="call = controller.newCall()">Call!</button>
+        <p> {{controller.check}}</p>
+        <p> Current Number: {{call}}</p>
+        <table ng-repeat="row in controller.cardRows track by $index">
+          <tr>
+            <td ng-repeat ="number in row track by $index">{{ number }}</td>
+          </tr>
+        </table>
     </main>
 
     <!--in production, use-->
     <script type="text/javascript" src="js/helper.js"></script>
     <script type="text/javascript" src="js/controllers/bingoController.js"></script>
+    <script type="text/javascript" src="js/factories/bingoCallFactory.js"></script>
     <script type="text/javascript" src="js/factories/bingoCardFactory.js"></script>
     <script type="text/javascript" src="js/factories/bingoPositionsFactory.js"></script>
   </body>

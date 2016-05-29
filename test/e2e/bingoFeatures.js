@@ -1,6 +1,16 @@
 'use strict';
 
 describe('Bingo game', function() {
+  it('calls a new number when the button is clicked', function(){
+    browser.get('/app');
+    var button = $('#callNumber');
+    button.click;
+    var firstCall = $('#call');
+    button.click;
+    var newCall = = $('#call');
+    expect(firstCall.getText()).not.toEqual(newCall.getText());
+  });
+
   it('checks the controller is working', function() {
     browser.get('/app');
     var check = $('#check');
