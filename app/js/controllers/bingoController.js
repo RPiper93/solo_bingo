@@ -6,7 +6,6 @@ bingoApp.controller('BingoCardController', ['BingoCardFactory', 'BingoPositionsF
   var card = factory.generate();
   var call = new BingoCallFactory;
 
-  self.currentNumber = call.currentNumber;
   self.newCall = function(){
     return call.newNumber();
   };

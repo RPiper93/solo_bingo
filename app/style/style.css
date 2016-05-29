@@ -1,0 +1,75 @@
+@import url(https://fonts.googleapis.com/css?family=Bangers|Open+Sans:400,600);
+
+body {
+  font: 'Open Sans';
+  font-size: 18;
+  font-weight: 600;
+  background-color: #FFF6D9;
+  height: 100vh;
+  text-align: center;
+  min-width: 540px;
+}
+
+#title {
+  font-family: Bangers;
+  bottom: 0;
+}
+
+#title h1 {
+  font-size: 32vw;
+}
+
+#game__call__number {
+  font-size: 60px;
+  height: 65px;
+  margin-bottom: 5px;
+}
+
+#game__call__button {
+  border-radius: 15%;
+  background-color: #626CB2;
+  color: white;
+  font-weight: 400;
+  padding-bottom: 5px;
+  margin-bottom: 25px;
+}
+
+#game__card__table {
+  display: table;
+}
+
+#game__card__table__row__cell {
+  display: table-cell;
+  padding: 1px 1px;
+  margin: 0.25em;
+  height: 50px;
+  border-radius: 100%;
+  background-color: #FFF1BF;
+}
+
+#game__card__table__row__cell:hover {background-color: #B2A474;}
+
+@media all and (max-width: 544px) and (min-width: 0px) {
+  #title h1 {
+    font-size: 175px;
+  }
+
+}
+
+@media all and (max-width: 640px) and (min-width: 0px) {
+  #game__card__table {
+    width: 568px;
+  }
+
+  #game__card__table__row__cell {
+    width: 40px;
+  }
+}
+
+@media all and (min-width: 640px) {
+  #title h1 {
+    font-size: 205px;
+  }
+
+
+}

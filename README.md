@@ -4,42 +4,13 @@
 
 
 
-An app that allows people to play a game of Bingo.
+An app that allows people to play a solo game of Bingo (just for fun, no winnings!).
+
+###Basic Design
+
+[Current Appearance](/img/webpage.png)
 
 ### To Do
-
--Generate a 9x3 Bingo Card:
-
-```
-As a bingo player
-So I can play the game
-I want a Bingo Card with 15 numbers on it
-```
-
-```
-As a bingo player
-So that card is different for each game
-I want the Bingo Card to be generated randomly
-```
--Playing the Game:
-
-```
-As a bingo player
-So I can mark off numbers
-I want a number between 1 and 90 to be called
-```
-
-```
-As a bingo player
-So I can mark my numbers
-I want to be able to click a number and mark it when it's been called
-```
-
-```
-As a bingo player
-So the game is exciting
-I want a new number to be called every 15/20 seconds
-```
 
 -Types of Game:
 
@@ -50,4 +21,8 @@ I want to be able to pick the way to win (eg. Four Corners, Full House etc.)
 ```
 ### Future Plans
 
-Given more time, I'd want to look over how I've generated the Bingo Cards to see if there is a simpler, more reliable way. If not, I want to finish my code so that it always produces rows with five numbers and four spaces.
+-I want a function that checks if the game has been won or not. (If it has, then clicking the word 'Bingo!' would bring up a message saying the game had been won.)
+-I'd like the option to choose different ways of winning the game - four corners, a line, a full house - which would change the conditions for the game to be considered won.
+-I'd want the calling of the numbers to be done automatically every 20/30 seconds instead of by manually pressing a button.
+-Given more time, I'd want to look over how I've generated the Bingo Cards to see if there is a simpler, more reliable way. If not, I want to finish my code so that it always produces rows with five numbers and four spaces.
+-Complete the CSS styling.

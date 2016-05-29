@@ -3,23 +3,32 @@
   <head>
     <meta charset="utf-8">
     <title>Bingo!</title>
+    <link href='https://fonts.googleapis.com/css?family=Bangers|Open+Sans:400,600' rel='stylesheet' type='text/css'>
     <script src="bower_components/angular/angular.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="style/style.css">
+
 
   </head>
   <body>
-    <main>
-      <h1>Bingo!</h1>
-      <div ng-controller="BingoCardController as controller">
-        <p> Current Number: {{call}}</p>
-        <button ng-click="call = controller.newCall()">Call!</button>
-        <table ng-repeat="row in controller.cardRows track by $index">
-          <tr>
-            <td ng-repeat ="number in row track by $index">
-              <button ng-click="number.mark(call)" ng-style="number.marked === true && {'color': 'red'} || {'color' : 'black'}">{{ number.amount }}</button>
-            </td>
-          </tr>
-        </table>
+    <main class="container-fluid">
+      <div ng-controller="BingoCardController as controller" id="game" class="container-fluid">
+        <div id="game__call" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <p id="game__call__number">{{call}}</p>
+          <button ng-click="call = controller.newCall()" id="game__call__button">Call!</button>
+        </div>
+        <div id="game__card" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <div id="game__card__table" ng-repeat="row in controller.cardRows track by $index" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div "game__card__table__row" ng-repeat ="number in row track by $index">
+                <button id="game__card__table__row__cell" ng-click="number.mark(call)" ng-style="number.marked === true && {'background-color': '#BFC7FF'} || {'background-color': '#FFF1BF'}" class="col-xs-1 col-sm-1 col-md-1 col-lg-1">{{ number.amount }}</button>
+              </td>
+            </div>
+          </div>
+        </div>
+      <div id="title" class="container-fluid">
+        <h1>Bingo!</h1>
+      </div>
     </main>
 
     <!--in production, use-->
