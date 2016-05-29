@@ -11,12 +11,13 @@
     <main>
       <h1>Bingo!</h1>
       <div ng-controller="BingoCardController as controller">
-        <button ng-click="call = controller.newCall()">Call!</button>
-        <p> {{controller.check}}</p>
         <p> Current Number: {{call}}</p>
+        <button ng-click="call = controller.newCall()">Call!</button>
         <table ng-repeat="row in controller.cardRows track by $index">
           <tr>
-            <td ng-repeat ="number in row track by $index">{{ number }}</td>
+            <td ng-repeat ="number in row track by $index">
+              <button ng-click="number.mark(call)" ng-style="number.marked === true && {'color': 'red'} || {'color' : 'black'}">{{ number.amount }}</button>
+            </td>
           </tr>
         </table>
     </main>
@@ -27,5 +28,6 @@
     <script type="text/javascript" src="js/factories/bingoCallFactory.js"></script>
     <script type="text/javascript" src="js/factories/bingoCardFactory.js"></script>
     <script type="text/javascript" src="js/factories/bingoPositionsFactory.js"></script>
+    <script type="text/javascript" src="js/factories/bingoNumberFactory.js"></script>
   </body>
 </html>

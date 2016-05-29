@@ -21,11 +21,6 @@ describe('BingoCardFactory', function() {
     expect(bingoCard.layout.length).toEqual(9);
   });
 
-  it('the first number on the card is less than 10', function() {
-    bingoCard.generate();
-    expect(bingoCard.entries[0][0]).toBeLessThan(11);
-  });
-
   it('generates a card with 9 entries per row', function() {
     bingoCard.generate();
     var row = bingoCard.entries[0];

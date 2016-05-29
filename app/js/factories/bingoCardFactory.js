@@ -1,6 +1,6 @@
 "use strict";
 
-bingoApp.factory('BingoCardFactory', ['BingoPositionsFactory', function(BingoPositionsFactory){
+bingoApp.factory('BingoCardFactory', ['BingoPositionsFactory', 'BingoNumberFactory', function(BingoPositionsFactory, BingoNumberFactory){
   var Card = function(){
     const POSSIBLE_CARD_PERMUTATIONS = [
     [3,3,3,1,1,1,1,1,1],
@@ -31,7 +31,8 @@ bingoApp.factory('BingoCardFactory', ['BingoPositionsFactory', function(BingoPos
         this._addToRow(j, " ");
       }
       else {
-        this._addToRow(j, this.numbers.shift());
+        var amount = this.numbers.shift();
+        this._addToRow(j, new BingoNumberFactory(amount));
       };
     };
   };
